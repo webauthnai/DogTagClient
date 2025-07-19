@@ -22,7 +22,6 @@ let package = Package(
         .target(
             name: "DogTagClient",
             dependencies: ["DogTagStorage"],
-            exclude: ["SignatureCounterSolutions.md"]
         ),
         .testTarget(
             name: "DogTagClientTests",

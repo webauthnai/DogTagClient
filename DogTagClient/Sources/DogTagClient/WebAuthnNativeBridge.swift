@@ -622,7 +622,7 @@ class WebAuthnNativeBridge: NSObject, WKScriptMessageHandlerWithReply {
                         }
                         
                         // Handle hmacSecret extension for authentication
-                        if let hmacSecret = extensions["hmacSecret"] as? [String: Any] {
+                        if extensions["hmacSecret"] is [String: Any] {
                             // This would typically involve HMAC operations with the credential
                             // For now, we'll indicate it's supported but not implemented
                             print("🔍 hmacSecret extension requested but not fully implemented")
@@ -636,7 +636,7 @@ class WebAuthnNativeBridge: NSObject, WKScriptMessageHandlerWithReply {
                                     "blob": Data() // Empty blob for now
                                 ]
                                 print("✅ Added largeBlob read result")
-                            } else if let write = largeBlob["write"] {
+                            } else if largeBlob["write"] != nil {
                                 // Would typically write blob data
                                 clientExtensionResults["largeBlob"] = [
                                     "written": true
