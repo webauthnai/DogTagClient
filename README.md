@@ -1,4 +1,4 @@
-# 🏷️ DogTagClient
+# 🐶🪪 DogTagClient
 
 <div align="center">
 
@@ -9,7 +9,7 @@
 [![SwiftData](https://img.shields.io/badge/SwiftData-✓-green.svg)](https://developer.apple.com/documentation/swiftdata)
 [![FIDO2](https://img.shields.io/badge/FIDO2-✓-red.svg)](https://fidoalliance.org)
 
-*Transform your macOS app into a WebAuthn powerhouse with native Touch ID support, virtual hardware keys, and comprehensive credential management.*
+*Transform your macOS apps and WebKit Views into a WebAuthn powerhouse with native Touch ID support, virtual hardware keys, and comprehensive credential management.*
 
 </div>
 
@@ -63,14 +63,10 @@ dependencies: [
 
 ### Requirements
 
-- **macOS 12.0+** (Required for SwiftData and modern LocalAuthentication APIs)
+- **macOS 12.0+** (Required for CoreData [Not fully tested, YMMV] and modern LocalAuthentication APIs)
 - **Swift 5.9+** (Required for modern Swift features)
 - **Xcode 15.0+** (For SwiftData support)
-
-### Dependencies
-
-DogTagClient depends on:
-- `DogTagStorage`: Secure credential storage backend (included as local dependency)
+  
 
 ## 🏃‍♂️ Quick Start
 
