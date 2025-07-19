@@ -9,7 +9,7 @@
 [![SwiftData](https://img.shields.io/badge/SwiftData-✓-green.svg)](https://developer.apple.com/documentation/swiftdata)
 [![FIDO2](https://img.shields.io/badge/FIDO2-✓-red.svg)](https://fidoalliance.org)
 
-*Transform your macOS app into a WebAuthn powerhouse with native Touch ID support, virtual hardware keys, and comprehensive credential management.*
+*Transform your macOS apps and WebKit Views into a WebAuthn powerhouse with native Touch ID support, virtual hardware keys, and comprehensive credential management.*
 
 </div>
 
