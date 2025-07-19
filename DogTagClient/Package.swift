@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "DogTagClient",
     platforms: [
-        .macOS(.v12)
+        .macOS(.v14) // Updated to support SwiftData requirements
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
@@ -13,7 +13,7 @@ let package = Package(
             targets: ["DogTagClient"]),
     ],
     dependencies: [
-        // Local path dependency to DogTagStorage
+        // External dependency to DogTagStorage - ensure this repository exists and is accessible
         .package(url: "https://github.com/webauthnai/DogTagStorage.git", from: "1.0.1")
     ],
     targets: [
@@ -22,6 +22,7 @@ let package = Package(
         .target(
             name: "DogTagClient",
             dependencies: ["DogTagStorage"],
+            exclude: ["SignatureCounterSolutions.md", "KEY_ACCESS_FIXES.md"]
         ),
         .testTarget(
             name: "DogTagClientTests",

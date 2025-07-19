@@ -63,9 +63,16 @@ dependencies: [
 
 ### Requirements
 
-- **macOS 12.0+** (Required for CoreData [Not fully tested, YMMV] and modern LocalAuthentication APIs)
+- **macOS 14.0+** (Required for SwiftData and modern LocalAuthentication APIs)
 - **Swift 5.9+** (Required for modern Swift features)
 - **Xcode 15.0+** (For SwiftData support)
+
+### Dependencies
+
+DogTagClient depends on:
+- `DogTagStorage`: Secure credential storage backend (external dependency)
+  - **⚠️ Important**: Ensure the DogTagStorage repository at `https://github.com/webauthnai/DogTagStorage.git` is accessible
+  - If the repository is private or doesn't exist, you'll need to create it or use a local path dependency during development
   
 
 ## 🏃‍♂️ Quick Start
@@ -402,6 +409,55 @@ swift test --filter VirtualHardwareKeyTests
 let testManager = DogTagManager()
 // Simulate credential creation, usage, and management
 ```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### **1. DogTagStorage Dependency Not Found**
+```
+error: failed to resolve dependencies
+'https://github.com/webauthnai/DogTagStorage.git' not found
+```
+
+**Solutions**:
+- Verify the DogTagStorage repository exists and is accessible
+- For development, use a local path dependency:
+  ```swift
+  .package(path: "../DogTagStorage")
+  ```
+- Create the DogTagStorage repository if it doesn't exist
+
+#### **2. SwiftData Compatibility Issues**
+```
+'SwiftData' is only available in macOS 14.0 or newer
+```
+
+**Solutions**:
+- Ensure your deployment target is macOS 14.0+
+- Update Xcode to version 15.0 or later
+- Check that your project's minimum deployment target matches the package requirements
+
+#### **3. Database Schema Conflicts**
+If you encounter database migration or schema issues:
+
+```swift
+// Clean up legacy databases
+DatabaseCleanupUtility.shared.analyzeDatabases()
+```
+
+#### **4. Virtual Key Mount Issues**
+```bash
+# Check if disk images can be mounted manually
+hdiutil attach /path/to/virtual-key.dmg
+```
+
+### Getting Help
+
+If you encounter issues:
+1. Check the [Issues](https://github.com/yourusername/DogTagClient/issues) page
+2. Review the [Virtual Keys README](VIRTUAL_KEYS_README.md) for virtual key specific issues
+3. Enable debug logging in your app for detailed error information
 
 ## 🤝 Contributing
 
