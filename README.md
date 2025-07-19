@@ -63,14 +63,10 @@ dependencies: [
 
 ### Requirements
 
-- **macOS 12.0+** (Required for SwiftData and modern LocalAuthentication APIs)
+- **macOS 12.0+** (Required for CoreData [Not fully tested, YMMV] and modern LocalAuthentication APIs)
 - **Swift 5.9+** (Required for modern Swift features)
 - **Xcode 15.0+** (For SwiftData support)
-
-### Dependencies
-
-DogTagClient depends on:
-- `DogTagStorage`: Secure credential storage backend (included as local dependency)
+  
 
 ## 🏃‍♂️ Quick Start
 
