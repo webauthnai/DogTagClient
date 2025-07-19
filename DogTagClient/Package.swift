@@ -14,7 +14,7 @@ let package = Package(
     ],
     dependencies: [
         // External dependency to DogTagStorage - ensure this repository exists and is accessible
-        .package(url: "https://github.com/webauthnai/DogTagStorage.git", from: "1.0.1")
+        .package(url: "https://github.com/webauthnai/DogTagStorage.git", from: "1.0.3")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
