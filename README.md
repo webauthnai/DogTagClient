@@ -1,4 +1,4 @@
-# 🐶🏷️ DogTagClient
+# 🐶🪪 DogTagClient
 
 <div align="center">
 
